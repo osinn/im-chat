@@ -1,0 +1,42 @@
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+    map-underscore-to-camel-case: true
+  global-config:
+    db-config:
+      id-type: ASSIGN_ID
+  mapper-locations: classpath*:/mapper/*/*Mapper.xml
+  typeAliasesPackage: com.gitee.osinn.im.*.entity
+server:
+  port: 9991
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/im?useSSL=false&characterEncoding=UTF-8&useUnicode=true&tinyInt1isBit=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: 123456
+  redis:
+    host: localhost # Redis服务器地址
+    database: 0 # Redis数据库索引（默认为0）
+    port: 6379 # Redis服务器连接端口
+    password: 123456 # Redis服务器连接密码（默认为空）
+    timeout: 3000ms # 连接超时时间（毫秒）
+  freemarker:
+    charset: UTF-8
+    cache: false
+    template-loader-path: classpath:/templates
+    content-type: text/html
+    suffix: .html
+    expose-request-attributes: true
+    expose-session-attributes: true
+    request-context-attribute: request
+
+#spring.freemarker.template-loader-path=classpath:/web/
+#spring.freemarker.cache=false
+#spring.freemarker.charset=UTF-8
+#spring.freemarker.check-template-location=true
+#spring.freemarker.content-type=text/html
+#spring.freemarker.expose-request-attributes=true
+#spring.freemarker.expose-session-attributes=true
+#spring.freemarker.request-context-attribute=request
+#spring.freemarker.suffix=.ftl
